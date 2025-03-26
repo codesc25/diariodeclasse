@@ -36,18 +36,18 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="number"],
-textarea {
+textarea,
+select {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* Garante que o padding não aumente a largura total */
+    font-size: 16px;
 }
 
 textarea {
     resize: vertical;
-    /* Permite redimensionamento vertical */
 }
 
 button {
@@ -59,29 +59,51 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+    width: 100%; 
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-/* Estilos para dispositivos móveis */
-@media (max-width: 600px) {
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
     .container {
         width: 95%;
-        padding: 10px;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
     }
 
     input[type="text"],
     input[type="date"],
     input[type="number"],
-    textarea {
-        width: 100%;
+    textarea,
+    select {
+        font-size: 14px;
+        padding: 6px;
     }
 
     button {
-        width: 100%;
-        margin-top: 5px;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 769px) {
+    .container {
+        width: 80%;
+        max-width: 600px;
+        margin: 20px;
+        padding: 20px;
     }
 }
 
