@@ -1,0 +1,72 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Classe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "config": "./config.js",
+                "script": "./script.js"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Diário de Classe</h1>
+        <form id="diario-form">
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+            <div class="form-group">
+                <label for="professor">Professor:</label>
+                <input type="text" id="professor" name="professor" required>
+            </div>
+            <div class="form-group">
+                <label for="disciplina">Disciplina:</label>
+                <input type="text" id="disciplina" name="disciplina" required>
+            </div>
+            <div class="form-group">
+                <label for="turma">Turma:</label>
+                <select id="turma" name="turma" required>
+                    <option value="6ºM1">6ºM1</option>
+                    <option value="7ºM1">7ºM1</option>
+                    <option value="8ºM1">8ºM1</option>
+                    <option value="9ºM1">9ºM1</option>
+                    <option value="6ºV1">6ºV1</option>
+                    <option value="7ºV1">7ºV1</option>
+                    <option value="8ºV1">8ºV1</option>
+                    <option value="EJA">EJA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cargaHoraria">Carga Horária:</label>
+                <input type="number" id="cargaHoraria" name="cargaHoraria" required>
+            </div>
+            <div class="form-group">
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="observacoes">Observações:</label>
+                <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+            </div>
+            <button type="submit">Salvar</button>
+            <button type="button" id="export-pdf">Exportar para PDF</button>
+        </form>
+    </div>
+
+    <div class="container" id="saved-data">
+        <!-- Saved data will be displayed here -->
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
